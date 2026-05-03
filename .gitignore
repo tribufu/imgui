@@ -78,9 +78,9 @@ examples/example_sdl3_sdlrenderer3/example_sdl3_sdlrenderer3
 examples/example_sdl3_vulkan/example_sdl3_vulkan
 
 # Premake files
+*.filters
+*.user
 *.vcxproj
 *.xcodeproj
 /ImGui/
-bin/
 Makefile
-obj/
