@@ -83,4 +83,6 @@ examples/example_sdl3_vulkan/example_sdl3_vulkan
 *.vcxproj
 *.xcodeproj
 /ImGui/
+bin/
 Makefile
+obj/
