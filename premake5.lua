@@ -7,6 +7,8 @@ project "ImGui"
     language "C++"
     cppdialect "C++17"
 
+    removeplatforms { "Any CPU" }
+
     files
     {
         "imconfig.h",
