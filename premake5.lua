@@ -1,7 +1,6 @@
 --- @diagnostic disable: undefined-global, undefined-field, lowercase-global
 
 project "ImGui"
-    targetname "imgui"
     location "."
     kind "StaticLib"
     language "C++"
