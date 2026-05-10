@@ -10,24 +10,54 @@ project "ImGui"
 
     files
     {
-        "imconfig.h",
-        "imgui_demo.cpp",
-        "imgui_draw.cpp",
-        "imgui_internal.h",
-        "imgui_tables.cpp",
-        "imgui_widgets.cpp",
-        "imgui.cpp",
-        "imgui.h",
-        "imstb_rectpack.h",
-        "imstb_textedit.h",
-        "imstb_truetype.h",
+        "*.cpp",
+        "*.h",
     }
+
+    includedirs
+    {
+        "../glfw/include",
+        ".",
+    }
+
+    filter { "system:windows" }
+        files
+        {
+            "./backends/imgui_impl_win32.*",
+            "./backends/imgui_impl_dx9.*",
+            "./backends/imgui_impl_dx10.*",
+            "./backends/imgui_impl_dx11.*",
+            "./backends/imgui_impl_dx12.*",
+        }
 
     filter "system:macosx"
         pic "On"
+
+        files
+        {
+            "./backends/imgui_impl_metal.*",
+            "./backends/imgui_impl_osx.*",
+        }
 
     filter "system:linux"
         pic "On"
 
     filter "system:android"
         androidnamespace "com.tribufu.alnilam.vendor.imgui"
+
+        files
+        {
+            "./backends/imgui_impl_android.*",
+        }
+
+    filter "not system:android"
+        files
+        {
+            "./backends/imgui_impl_glfw.*",
+            "./backends/imgui_impl_opengl3.*",
+        }
+
+        defines
+        {
+            "GLFW_INCLUDE_NONE",
+        }
