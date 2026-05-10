@@ -43,7 +43,7 @@ project "ImGui"
         pic "On"
 
     filter "system:android"
-        androidnamespace "com.tribufu.alnilam.vendor.imgui"
+        androidnamespace "com.tribufu.vendor.imgui"
 
         files
         {
