@@ -1,0 +1,179 @@
+{
+    "version": 9,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 30,
+        "patch": 0
+    },
+    "include": [
+        "CMakeBasePresets.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "xcode",
+            "hidden": true,
+            "generator": "Xcode",
+            "cacheVariables": {
+                "CMAKE_CONFIGURATION_TYPES": "Debug;Release"
+            }
+        },
+        {
+            "name": "clang",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++"
+            }
+        },
+        {
+            "name": "apple",
+            "hidden": true,
+            "inherits": [
+                "base",
+                "xcode",
+                "clang"
+            ],
+            "cacheVariables": {}
+        },
+        {
+            "name": "mac",
+            "hidden": true,
+            "inherits": [
+                "apple"
+            ],
+            "cacheVariables": {
+                "CMAKE_SYSTEM_NAME": "Darwin",
+                "CMAKE_OSX_DEPLOYMENT_TARGET": "10.14"
+            }
+        },
+        {
+            "name": "mac-x64",
+            "inherits": [
+                "mac"
+            ],
+            "cacheVariables": {
+                "CMAKE_OSX_ARCHITECTURES": "x86_64",
+                "VCPKG_TARGET_TRIPLET": "x64-osx"
+            }
+        },
+        {
+            "name": "mac-arm64",
+            "inherits": [
+                "mac"
+            ],
+            "cacheVariables": {
+                "CMAKE_OSX_ARCHITECTURES": "arm64",
+                "VCPKG_TARGET_TRIPLET": "arm64-osx"
+            }
+        },
+        {
+            "name": "ios",
+            "hidden": true,
+            "inherits": [
+                "apple"
+            ],
+            "cacheVariables": {
+                "CMAKE_SYSTEM_NAME": "iOS",
+                "CMAKE_OSX_DEPLOYMENT_TARGET": "11.0",
+                "VCPKG_CMAKE_CONFIGURE_OPTIONS": "-DSDL_GPU=OFF"
+            }
+        },
+        {
+            "name": "ios-arm64",
+            "inherits": [
+                "ios"
+            ],
+            "cacheVariables": {
+                "CMAKE_OSX_SYSROOT": "iphoneos",
+                "CMAKE_OSX_ARCHITECTURES": "arm64",
+                "VCPKG_TARGET_TRIPLET": "arm64-ios"
+            }
+        },
+        {
+            "name": "iossimulator-arm64",
+            "inherits": [
+                "ios"
+            ],
+            "cacheVariables": {
+                "CMAKE_OSX_SYSROOT": "iphonesimulator",
+                "CMAKE_OSX_ARCHITECTURES": "arm64",
+                "VCPKG_TARGET_TRIPLET": "arm64-ios-simulator"
+            }
+        },
+        {
+            "name": "tvos",
+            "hidden": true,
+            "inherits": [
+                "apple"
+            ],
+            "cacheVariables": {
+                "CMAKE_SYSTEM_NAME": "tvOS",
+                "CMAKE_OSX_SYSROOT": "appletvos"
+            }
+        },
+        {
+            "name": "visionos",
+            "hidden": true,
+            "inherits": [
+                "apple"
+            ],
+            "cacheVariables": {
+                "CMAKE_SYSTEM_NAME": "visionOS",
+                "CMAKE_OSX_SYSROOT": "xr"
+            }
+        },
+        {
+            "name": "watchos",
+            "hidden": true,
+            "inherits": [
+                "apple"
+            ],
+            "cacheVariables": {
+                "CMAKE_SYSTEM_NAME": "watchOS",
+                "CMAKE_OSX_SYSROOT": "watchos"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "debug-mac-x64",
+            "configurePreset": "mac-x64",
+            "configuration": "Debug"
+        },
+        {
+            "name": "release-mac-x64",
+            "configurePreset": "mac-x64",
+            "configuration": "Release"
+        },
+        {
+            "name": "debug-mac-arm64",
+            "configurePreset": "mac-arm64",
+            "configuration": "Debug"
+        },
+        {
+            "name": "release-mac-arm64",
+            "configurePreset": "mac-arm64",
+            "configuration": "Release"
+        },
+        {
+            "name": "debug-ios-arm64",
+            "configurePreset": "ios-arm64",
+            "configuration": "Debug"
+        },
+        {
+            "name": "release-ios-arm64",
+            "configurePreset": "ios-arm64",
+            "configuration": "Release"
+        },
+        {
+            "name": "debug-iossimulator-arm64",
+            "configurePreset": "iossimulator-arm64",
+            "configuration": "Debug"
+        },
+        {
+            "name": "release-iossimulator-arm64",
+            "configurePreset": "iossimulator-arm64",
+            "configuration": "Release"
+        }
+    ]
+}

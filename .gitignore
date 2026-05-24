@@ -77,12 +77,20 @@ examples/example_sdl3_sdlgpu3/example_sdl3_sdlgpu3
 examples/example_sdl3_sdlrenderer3/example_sdl3_sdlrenderer3
 examples/example_sdl3_vulkan/example_sdl3_vulkan
 
-# Premake files
+# CMake files
+.DS_Store
+*.dir/
 *.filters
+*.make
+*.sln
+*.slnx
 *.user
 *.vcxproj
 *.xcodeproj
-/ImGui/
+*.xcworkspace
 bin/
+cmake_install.cmake
+CMakeCache.txt
+CMakeFiles/
+intermediate/
 Makefile
-obj/

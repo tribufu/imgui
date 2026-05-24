@@ -1,0 +1,55 @@
+{
+    "version": 9,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 30,
+        "patch": 0
+    },
+    "include": [
+        "CMakeBasePresets.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "gcc",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        },
+        {
+            "name": "linux",
+            "hidden": true,
+            "inherits": [
+                "base",
+                "ninja",
+                "gcc"
+            ],
+            "cacheVariables": {
+                "CMAKE_SYSTEM_NAME": "Linux"
+            }
+        },
+        {
+            "name": "linux-x64",
+            "inherits": [
+                "linux"
+            ],
+            "cacheVariables": {
+                "CMAKE_SYSTEM_PROCESSOR": "x86_64",
+                "VCPKG_TARGET_TRIPLET": "x64-linux"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "debug-linux-x64",
+            "configurePreset": "linux-x64",
+            "configuration": "Debug"
+        },
+        {
+            "name": "release-linux-x64",
+            "configurePreset": "linux-x64",
+            "configuration": "Release"
+        }
+    ]
+}
