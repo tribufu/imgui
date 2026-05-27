@@ -1,4 +1,7 @@
-cmake_minimum_required(VERSION 3.16)
+# Copyright (c) Tribufu. All Rights Reserved.
+# SPDX-License-Identifier: UNLICENSED
+
+cmake_minimum_required(VERSION 3.20)
 
 project(imgui CXX)
 
