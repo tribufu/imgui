@@ -77,20 +77,27 @@ examples/example_sdl3_sdlgpu3/example_sdl3_sdlgpu3
 examples/example_sdl3_sdlrenderer3/example_sdl3_sdlrenderer3
 examples/example_sdl3_vulkan/example_sdl3_vulkan
 
-# CMake files
-.DS_Store
 *.dir/
+bin/
+CMakeFiles/
+intermediate/
+x64/
+
+.DS_Store
+*.aps
+*.csproj
 *.filters
 *.make
+*.ninja
 *.sln
 *.slnx
 *.user
 *.vcxproj
 *.xcodeproj
 *.xcworkspace
-bin/
 cmake_install.cmake
 CMakeCache.txt
-CMakeFiles/
-intermediate/
-Makefile
+compile_commands.json
+imgui.ini
+local.properties
+Makefiles
